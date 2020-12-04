@@ -13,10 +13,10 @@
         <div>
             <div>
                 <label for="">Name of the film</label>
-
-                <button id="ImportFilms" onclick="ImportFilms"> Import films</button>
+                <input type="file" , id="ImportFilms" , accept=".txt">
                 <button id="DeleteFilms" onclick="DeleteAllFilms()"> Delete all films</button>
                 <button id="AddFilm" onclick="Toggle()"> Add film</button>
+                <input type="text" id="search" onkeyup="SearchFunc()" placeholder="Search for a movie name or stars..">
                 <form action="" id="NewFilm" hidden>
                     <label for="">Film Name</label>
                     <input type="text" id="AddFilmName" placeholder="Enter Film Name">
