@@ -13,10 +13,6 @@ let inf;
 let inf1;
 let inf2;
 
-
-
-
-
 let List = [{
         Title: "Troy",
         ReleaseYear: "2004",
@@ -31,8 +27,6 @@ let List = [{
     }
 ];
 
-
-
 function AddNewFilm() {
     let list = {
         Title: FilmName.value,
@@ -42,9 +36,11 @@ function AddNewFilm() {
     }
     ListOfFilms.innerHTML = "";
     List.push(list);
+    FilmName.value = "";
+    FilmYear.value = "";
+    FilmFormat.value = "";
+    FilmStars.value = "";
     ShowFilms();
-
-
 
 }
 
@@ -53,18 +49,14 @@ function ShowFilms() {
     for (let i = 0; i < List.length; i++) {
 
         element = document.createElement("div");
-        element.id = "div1"
+        element.className = "div1"
         element1 = document.createElement("div");
-        element1.id = "div2"
+        element1.className = "div2"
         doc = document.createElement("p");
         inf = document.createElement("p");
         inf1 = document.createElement("p");
         inf2 = document.createElement("p");
         doc1 = document.createElement("button");
-
-        // inf.hidden = true;
-        // inf1.hidden = true;
-        // inf2.hidden = true;
 
         doc.innerHTML = List[i].Title;
         doc1.innerHTML = "ShowInfo";
@@ -72,19 +64,9 @@ function ShowFilms() {
         inf1.innerHTML = List[i].Format;
         inf2.innerHTML = List[i].Stars;
 
-        // doc.setAttribute("onclick", "onclick")
-        // doc.onclick = ToggleInfo();
-
-
-        // doc.setAttribute("onclick")
-        // doc.onclick(inf.toggleAttribute("hidden"), inf1.toggleAttribute("hidden"), inf2.toggleAttribute("hidden"))
-
-        // element.append(doc);
-        // doc.append(doc1);
-        // element.append(inf);
-        // element.append(inf1);
-        // element.append(inf2);
-
+        doc1.onclick = function() {
+            document.getElementsByClassName("div2")[i].toggleAttribute("hidden");
+        }
 
         element.append(doc);
         element.append(doc1);
@@ -94,31 +76,25 @@ function ShowFilms() {
         element1.append(inf2);
         ListOfFilms.append(element);
 
-        doc1.onclick = function() {
-            document.getElementById("div2").toggleAttribute("hidden");
-        }
-
-
-
-
-
-
-
-        //ListOfFilms.appendChild(element);
-
     }
 
 }
 
-
-
 function ToggleInfo() {
     let a = document.getElementsByClassName("InfoF");
-
 }
 
 function Toggle() {
     addnew.toggleAttribute("hidden")
+}
+
+function DeleteAllFilms() {
+    ListOfFilms.innerHTML = "";
+}
+
+function ImportFilms() {
+
+
 }
 
 ShowFilms();
