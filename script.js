@@ -54,6 +54,7 @@ function ShowFilms() {
         element1 = document.createElement("div");
         element1.className = "div2"
         doc = document.createElement("p");
+        doc.style.backgroundColor="green";
         inf = document.createElement("p");
         inf1 = document.createElement("p");
         inf2 = document.createElement("p");
@@ -163,6 +164,49 @@ function SearchFunc() {
 
 
 
+}
+
+function SortFilms(){
+
+    function compare(a,b){
+        if(a.Title>b.Title){
+            return 1;
+        }
+        if (a.Title<b.Title){
+            return -1;
+        }
+        else return 0;
+    }
+    List.sort(compare);
+    // let array = [];
+    // for(let z = 0; z<List.length; z++){
+    //     array.push(List[z].Title);
+    // }
+    // array.sort();
+   
+    ShowFilms();
+
+    
+}
+
+function SortFilmsDesc(){
+    function compare(a,b){
+        if(a.Title>b.Title){
+            return -1;
+        }
+        if (a.Title<b.Title){
+            return 1;
+        }
+        else return 0;
+    }
+    List.sort(compare);
+    // let array = [];
+    // for(let z = 0; z<List.length; z++){
+    //     array.push(List[z].Title);
+    // }
+    // array.sort();
+   
+    ShowFilms();
 }
 
 ShowFilms();

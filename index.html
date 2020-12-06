@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="file.css">
 </head>
 
 <body>
@@ -16,6 +17,8 @@
                 <input type="file" , id="ImportFilms" , accept=".txt">
                 <button id="DeleteFilms" onclick="DeleteAllFilms()"> Delete all films</button>
                 <button id="AddFilm" onclick="Toggle()"> Add film</button>
+                <button id = "SortFilms" onclick="SortFilms()">Sort Films Asc</button>
+                <button id = "SortFilmsDesc" onclick = "SortFilmsDesc()">Sort films Desc</button>
                 <input type="text" id="search" onkeyup="SearchFunc()" placeholder="Search for a movie name or stars..">
                 <form action="" id="NewFilm" hidden>
                     <label for="">Film Name</label>
